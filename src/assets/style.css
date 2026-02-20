@@ -1,0 +1,55 @@
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif; }
+
+body { background:#f2f4f8; color:#333; padding:20px; }
+header { display:flex; justify-content:center; align-items:center; margin-bottom:30px; }
+header .logo { display:flex; align-items:center; gap:15px; }
+header .logo img { height:50px; width:50px; object-fit:contain; }
+header h1 { font-size:28px; font-weight:700; color:#1a1a1a; }
+
+.controls { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-bottom:30px; }
+.controls select, .controls button { padding:10px 15px; border-radius:6px; border:1px solid #ccc; font-size:16px; outline:none; transition:all 0.2s ease-in-out; }
+.controls select:focus, .controls button:hover { border-color:#007bff; box-shadow:0 0 5px rgba(0,123,255,0.4); }
+.controls button { background:#007bff; color:#fff; border:none; cursor:pointer; }
+.controls button:hover { background:#0056b3; }
+.controls button:disabled { background:#aaa; cursor:not-allowed; }
+
+.loading { text-align:center; font-size:16px; color:#007bff; font-weight:600; padding:20px; grid-column: 1 / -1; }
+
+.count-bar { font-weight:600; margin-bottom:10px; grid-column: 1 / -1; }
+
+#results {
+  display:grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap:20px;
+}
+
+@media (max-width: 1200px) {
+  #results { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 900px) {
+  #results { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 600px) {
+  #results { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 400px) {
+  #results { grid-template-columns: 1fr; }
+}
+
+.card { background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); overflow:hidden; transition:transform 0.2s ease, box-shadow 0.2s ease; }
+.card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+.card img { width:100%; height:150px; object-fit:cover; cursor:pointer; }
+.card-content { padding:15px; }
+.card-content h3 { font-size:14px; font-weight:600; margin-bottom:5px; }
+.card-content p { font-size:12px; color:#555; margin-bottom:10px; }
+.links { display:flex; flex-wrap:wrap; gap:6px; }
+.card-content a { font-size:12px; color:#007bff; text-decoration:none; transition:color 0.2s; }
+.card-content a:hover { color:#0056b3; }
+
+/* Image Modal */
+#imgModal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; }
+#imgModal img { max-width:90%; max-height:90%; border-radius:10px; }
